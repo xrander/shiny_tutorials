@@ -3,7 +3,7 @@
     "path": "~/Documents/Data Science/Personal Project/shiny_apps/app.R",
     "project_path": "app.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "4189701997",
     "contents": "",
     "dirty": false,
     "created": 1701881418830.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "16,21",
+        "cursorPosition": "26,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702545973,
+    "lastKnownWriteTime": 1702563882,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702545973330,
+    "last_content_update": 1702563882675,
     "read_only": false,
     "read_only_alternatives": []
 }
