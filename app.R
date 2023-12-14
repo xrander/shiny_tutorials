@@ -4,15 +4,16 @@ library("tidyverse")
 ## User Interface
 
 ui <- fluidPage(
-  textInput("name", "What's your name?"),
-  textOutput("greeting")
+  sliderInput("x", label = "if x is", min = 1, max = 50, value = 30),
+  "then x times 5 is",
+  textOutput("product")
 )
 
 
 ## Server
 server <- function(input, output, session){
-  output$greeting<- renderText({
-    paste0("Hello ", input$name)
+  output$product<- renderText({
+    input$x * 5
   })
 }
 
