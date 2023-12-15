@@ -6,27 +6,32 @@ datasets <- c("economics", "faithfuld", "seals")
 
 ## User Interface
 ui <- fluidPage(
-  selectInput("dataset", "Dataset", choices = datasets),
-  verbatimTextOutput("summary"),
-  plotOutput("plot")
-)
+  textInput("name", "", placeholder = "your name"),
+  sliderInput("delivery", "When should we deliver",
+              min = as.Date("2020-09-16"),
+              max = as.Date("2020-09-23"),
+              value = as.Date("2020-09-17")),
+  sliderInput("values", "select values",
+              value = 5,
+              min = 0,
+              max = 100,
+              step =5,
+              animate = T,
+              animationOptions(
+                interval = 100,
+                loop = F,
+                playButton = T,
+                pauseButton = T)
+              )
+  )
+
 
 
 ## Server
-server <- function(input, output, session){
-  dataset <- reactive({
-    get(input$dataset, "package:ggplot2")
-  })
-  
-  output$summary<- renderPrint( 
-    summary(dataset())
-    )
-
-  output$plot <- renderPlot(
-    plot(dataset())
-  ,res = 96)
-  }
+server <- function(input, output, session){}
 
 
 ## Shiny app construction
 shinyApp(ui, server)
+
+
